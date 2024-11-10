@@ -4,7 +4,7 @@ export interface NewsData {
 }
 
 export async function checkNews(data: NewsData): Promise<string> {
-  const response = await fetch('/api/check_news', {
+  const response = await fetch('/api/predict', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(data),
