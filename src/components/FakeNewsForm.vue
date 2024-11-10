@@ -1,9 +1,7 @@
 <template>
   <div>
-    <!-- Form Title -->
     <h2 class="text-2xl font-bold text-center mb-4 uppercase">Submit Your News</h2>
     <form @submit.prevent="submitForm" class="space-y-6">
-      <!-- Title Input -->
       <div>
         <label for="title" class="block text-sm font-semibold text-gray-800 mb-2 uppercase">
           News Title
@@ -18,7 +16,6 @@
         />
       </div>
 
-      <!-- Content Input -->
       <div>
         <label for="content" class="block text-sm font-semibold text-gray-800 mb-2 uppercase">
           News Content
@@ -32,7 +29,6 @@
         ></textarea>
       </div>
 
-      <!-- Submit Button -->
       <button
         type="submit"
         class="w-full bg-gray-800 text-white py-2 rounded-sm font-semibold hover:bg-gray-700 border border-gray-600"

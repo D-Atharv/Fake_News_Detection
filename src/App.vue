@@ -1,5 +1,10 @@
 <template>
+  <div v-if="isLoading" class="flex items-center justify-center min-h-screen bg-gray-100">
+    <LoadingScreen />
+  </div>
+
   <div
+    v-else
     id="app"
     class="flex flex-col min-h-screen bg-gray-100 text-gray-900 font-serif bg-cover bg-center"
     :style="{
@@ -37,10 +42,12 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
+import LoadingScreen from './components/LoadingScreen.vue';
 import backgroundImage from './assets/newspaper.jpg';
 
 export default defineComponent({
   name: 'App',
+  components: { LoadingScreen },
   data() {
     return {
       backgroundImage,
@@ -50,18 +57,16 @@ export default defineComponent({
         month: 'long',
         day: 'numeric',
       }),
+      isLoading: true,
     };
+  },
+  mounted() {
+    setTimeout(() => {
+      this.isLoading = false;
+    }, 2000); 
   },
 });
 </script>
 
-<style scoped>
-#app {
-  background-attachment: fixed;
-}
 
-body {
-  font-family: 'Times New Roman', Times, serif;
-  color: #333;
-}
-</style>
+
