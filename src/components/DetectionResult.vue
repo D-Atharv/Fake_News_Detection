@@ -7,7 +7,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, computed } from 'vue';
+import { defineComponent, computed } from 'vue'
 
 export default defineComponent({
   name: 'DetectionResult',
@@ -19,15 +19,17 @@ export default defineComponent({
   },
   setup(props) {
     const resultMessage = computed(() =>
-      props.result === 'Fake' ? 'This news appears to be fake.' : 'This news appears to be real.'
-    );
+      props.result === 'Fake News'
+        ? 'This news appears to be fake.'
+        : 'This news appears to be real.',
+    )
 
     const resultClass = computed(() => ({
-      'text-red-700': props.result === 'Fake',
-      'text-green-700': props.result === 'Real',
-    }));
+      'text-red-700': props.result === 'Real',
+      'text-green-700': props.result === 'Fake',
+    }))
 
-    return { resultMessage, resultClass };
+    return { resultMessage, resultClass }
   },
-});
+})
 </script>

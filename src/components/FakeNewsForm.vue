@@ -40,14 +40,13 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref, defineEmits } from 'vue';
+import { defineComponent, ref } from 'vue';
 
 export default defineComponent({
   name: 'FakeNewsForm',
-  setup() {
+  setup(_, { emit }) {
     const title = ref('');
     const content = ref('');
-    const emit = defineEmits(['submit']);
 
     const submitForm = () => {
       emit('submit', { title: title.value, content: content.value });
