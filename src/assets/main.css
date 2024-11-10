@@ -6,3 +6,16 @@ body.dark {
   background-color: #1e1e2f;
   color: #d1d1e0;
 }
+
+body {
+  font-family: 'Georgia', 'Times New Roman', Times, serif;
+  color: #333;
+}
+
+h1, h2, h3 {
+  font-family: 'Georgia', serif;
+}
+
+button {
+  transition: background-color 0.3s ease;
+}

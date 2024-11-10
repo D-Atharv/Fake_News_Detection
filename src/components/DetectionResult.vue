@@ -1,8 +1,6 @@
 <template>
-  <div :class="resultClass" class="p-6 rounded-xl mt-8 text-center">
-    <p class="text-xl font-semibold flex items-center justify-center gap-2">
-      <span v-if="result === 'Fake'" class="text-red-600">&#10060;</span>
-      <span v-else class="text-green-600">&#9989;</span>
+  <div :class="resultClass" class="p-6 mt-8 border-t border-gray-500 text-center">
+    <p class="text-2xl font-bold uppercase tracking-wide">
       {{ resultMessage }}
     </p>
   </div>
@@ -25,8 +23,8 @@ export default defineComponent({
     );
 
     const resultClass = computed(() => ({
-      'bg-red-50 border border-red-300 text-red-700': props.result === 'Fake',
-      'bg-green-50 border border-green-300 text-green-700': props.result === 'Real',
+      'text-red-700': props.result === 'Fake',
+      'text-green-700': props.result === 'Real',
     }));
 
     return { resultMessage, resultClass };

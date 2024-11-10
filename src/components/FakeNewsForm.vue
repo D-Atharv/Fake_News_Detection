@@ -1,34 +1,43 @@
 <template>
   <div>
-    <h2 class="text-2xl font-semibold text-center mb-4">Check News Authenticity</h2>
-    <p class="text-gray-400 text-center mb-8">Enter the news title and content to detect if it's fake.</p>
+    <!-- Form Title -->
+    <h2 class="text-2xl font-bold text-center mb-4 uppercase">Submit Your News</h2>
     <form @submit.prevent="submitForm" class="space-y-6">
+      <!-- Title Input -->
       <div>
-        <label for="title" class="block text-sm font-medium text-gray-400 mb-2">News Title</label>
+        <label for="title" class="block text-sm font-semibold text-gray-800 mb-2 uppercase">
+          News Title
+        </label>
         <input
           type="text"
           id="title"
           v-model="title"
-          placeholder="E.g., 'New Health Breakthrough'"
+          placeholder="Enter the news title here"
           required
-          class="w-full px-4 py-3 border border-gray-700 rounded-lg bg-gray-900 text-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-600"
+          class="w-full px-4 py-2 border border-gray-500 rounded-sm bg-gray-50 text-gray-800 focus:outline-none focus:ring-1 focus:ring-gray-500"
         />
       </div>
+
+      <!-- Content Input -->
       <div>
-        <label for="content" class="block text-sm font-medium text-gray-400 mb-2">News Content</label>
+        <label for="content" class="block text-sm font-semibold text-gray-800 mb-2 uppercase">
+          News Content
+        </label>
         <textarea
           id="content"
           v-model="content"
           placeholder="Enter the news content here"
           required
-          class="w-full px-4 py-3 border border-gray-700 rounded-lg bg-gray-900 text-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-600 h-32 resize-none"
+          class="w-full px-4 py-2 border border-gray-500 rounded-sm bg-gray-50 text-gray-800 focus:outline-none focus:ring-1 focus:ring-gray-500 h-32 resize-none"
         ></textarea>
       </div>
+
+      <!-- Submit Button -->
       <button
         type="submit"
-        class="w-full bg-gradient-to-r from-blue-500 to-indigo-600 text-white font-semibold py-3 rounded-lg hover:shadow-lg transition duration-300"
+        class="w-full bg-gray-800 text-white py-2 rounded-sm font-semibold hover:bg-gray-700 border border-gray-600"
       >
-        Detect Fake News
+        Check News Authenticity
       </button>
     </form>
   </div>
