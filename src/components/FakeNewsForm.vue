@@ -11,7 +11,7 @@
           v-model="title"
           placeholder="E.g., 'New Health Breakthrough'"
           required
-          class="w-full px-4 py-3 border border-gray-600 rounded-lg bg-darkBg text-darkText focus:outline-none focus:ring-2 focus:ring-primaryAccent"
+          class="w-full px-4 py-3 border border-gray-700 rounded-lg bg-gray-900 text-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-600"
         />
       </div>
       <div>
@@ -21,12 +21,12 @@
           v-model="content"
           placeholder="Enter the news content here"
           required
-          class="w-full px-4 py-3 border border-gray-600 rounded-lg bg-darkBg text-darkText focus:outline-none focus:ring-2 focus:ring-primaryAccent h-32 resize-none"
+          class="w-full px-4 py-3 border border-gray-700 rounded-lg bg-gray-900 text-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-600 h-32 resize-none"
         ></textarea>
       </div>
       <button
         type="submit"
-        class="w-full bg-gradient-to-r from-primaryAccent to-secondaryAccent text-white font-semibold py-3 rounded-lg hover:shadow-lg transition duration-300"
+        class="w-full bg-gradient-to-r from-blue-500 to-indigo-600 text-white font-semibold py-3 rounded-lg hover:shadow-lg transition duration-300"
       >
         Detect Fake News
       </button>

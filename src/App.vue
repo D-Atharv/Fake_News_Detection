@@ -1,21 +1,19 @@
 <template>
   <div id="app" class="dark flex flex-col min-h-screen bg-darkBg text-darkText">
-    <!-- Header -->
-    <header class="bg-gradient-to-r from-primaryAccent to-secondaryAccent text-white py-6 shadow-lg">
-      <h1 class="text-center text-4xl font-bold">Fake News Detection App</h1>
+    <header class="bg-gradient-to-r from-primaryAccent to-secondaryAccent text-white py-6 shadow-lg relative">
+      <h1 class="text-4xl font-bold text-center">Fake News Detection App</h1>
+
+      <nav class="absolute top-0 right-0 m-6 space-x-4">
+        <router-link to="/" class="text-white hover:text-gray-200 font-medium">Home</router-link>
+        <router-link to="/about" class="text-white hover:text-gray-200 font-medium">About</router-link>
+      </nav>
     </header>
 
-    <!-- Main Content Area -->
     <main class="flex-grow flex items-center justify-center p-6">
       <div class="w-full max-w-2xl bg-darkCard shadow-custom-dark rounded-xl p-8 border border-gray-700">
         <router-view />
       </div>
     </main>
-
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-gray-400 py-4 text-center border-t border-gray-700">
-      <p class="text-sm">&copy; 2023 Fake News Detection. All rights reserved.</p>
-    </footer>
   </div>
 </template>
 
