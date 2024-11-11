@@ -14,11 +14,6 @@
       occurrences, using Bayes’ theorem to analyze patterns commonly found in real and fake news. It’s highly effective
       for quick, straightforward classifications.
     </p>
-    <p class="mb-4 text-lg leading-relaxed">
-      <span class="font-semibold">Random Forest Classifier:</span> This algorithm utilizes an ensemble of decision
-      trees to improve accuracy, making it ideal for more complex analysis. Together, these methods allow the app to
-      provide reliable insights, helping users verify their news sources with confidence.
-    </p>
   </div>
 </template>
 
