@@ -11,7 +11,7 @@
     </p>
     <p class="mb-4 text-lg leading-relaxed">
       <span class="font-semibold">Naive Bayes Classifier:</span> This classifier estimates probabilities based on word
-      occurrences, using Bayes’ theorem to analyze patterns commonly found in real and fake news. It’s highly effective
+      occurrences, using Bayes" theorem to analyze patterns commonly found in real and fake news. It"s highly effective
       for quick, straightforward classifications.
     </p>
   </div>

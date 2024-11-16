@@ -1,5 +1,5 @@
 <template>
-  <div class="space-y-8">
+  <div class="space-y-8 relative">
     <h2 class="text-3xl font-bold uppercase text-center border-b-2 pb-2 border-gray-500">
       News Authenticity Check
     </h2>
@@ -10,7 +10,12 @@
 
     <FakeNewsForm @submit="handleCheckNews" />
 
-    <DetectionResult v-if="result" :result="result" />
+    <div v-if="loading" class="fixed inset-0 flex flex-col justify-center items-center bg-white bg-opacity-80 z-50">
+      <div class="w-16 h-16 border-4 border-gray-200 border-t-blue-500 rounded-full animate-spin"></div>
+      <p class="text-gray-600 italic mt-4">Fetching prediction...</p>
+    </div>
+
+    <DetectionResult v-if="result && !loading" :result="result" />
   </div>
 </template>
 
@@ -26,11 +31,11 @@ export default defineComponent({
   components: { FakeNewsForm, DetectionResult },
   setup() {
     const result = ref<string | null>(null)
+    const loading = ref(false)
 
     const handleCheckNews = async (data: NewsData) => {
-      console.log('Received data from FakeNewsForm:', data) // Debugging: Check data format
+      console.log('Received data from FakeNewsForm:', data)
 
-      // Check if title and content are non-empty strings before passing to API
       if (!data.title || typeof data.title !== 'string' || !data.title.trim()) {
         console.error('Title is required and must be a non-empty string')
         result.value = 'Error: Title is required and must be a non-empty string'
@@ -42,11 +47,15 @@ export default defineComponent({
         return
       }
 
-      // Call the API if data is valid
-      result.value = await checkNews(data)
+      loading.value = true
+      try {
+        result.value = await checkNews(data)
+      } finally {
+        loading.value = false
+      }
     }
 
-    return { result, handleCheckNews }
+    return { result, loading, handleCheckNews }
   },
 })
 </script>
